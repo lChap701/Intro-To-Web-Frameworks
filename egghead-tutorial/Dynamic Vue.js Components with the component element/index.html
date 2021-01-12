@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <div id="card">
+        <header>{{ title }}</header><label v-on:click="toggle">{{ toggleLabel }}</label>
+        <ul>
+            <li v-for="item in items">
+                <keep-alive>
+                    <component v-bind:is="currentView" v-bind:name="item.text" v-bind:initial-quantity="item.quantity" v-bind:diet="item.diet"></component>
+                </keep-alive>
+            </li>
+        </ul>
+    </div>
+    <script type="text/x-template" id="dino-edit">
+        <div>
+            <button v-on:click="increment">{{ quantity }}</button> {{ name }}
+        </div>
+    </script>
+    <script type="text/x-template" id="dino-show">
+        <div><strong>{{ name }}</strong> | {{ diet }}</div>
+    </script>
+</html>

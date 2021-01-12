@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <div id="app">
+        <header>Dinosaur</header>
+        <form v-on:submit.prevent="addDinos">
+            <button>Add {{ amount }} Dinosaurs</button>
+            <input type="number" v-model="amount">
+        </form>
+        <p>You have {{ total }} dinosaurs!</p>
+    </div>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <div id="card">
+        <!-- Adds dinosaurs to the list -->
+        <form v-on:submit.prevent="addItem">
+            <input id="itemForm" type="text" v-model="input">
+            <button type="submit">Add Button</button>
+        </form>
+        <header>{{ title }}</header>
+        <ul>
+            <li v-for="(item, index) in items">
+                <span>
+                    <button v-on:click="item.quantity += 1">+</button>
+                    {{ item.quantity }}
+                    <button v-on:click="item.quantity -= 1">-</button>
+                </span>
+                <span>
+                    {{ item.text }}
+                    <button v-on:click="deleteItem(index)">Make Extinct</button>
+                </span>
+            </li>
+        </ul>
+        <ul>
+            <li>Total Dinos: {{ totalDinos }} <span>Updated: {{ dinosUpdated }}</span></li>
+            <li>Total Species: {{ totalSpecies }} <span>Updated: {{ speciesUpdated }}</span></li>
+        </ul>
+    </div>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <div id="app">
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">This box is {{checked ? "checked" : "unchecked"}}</label>
+        <hr>
+        <template v-for="dino in dinos">
+            <label>
+                <input type="radio" v-bind:value="dino" v-model="chosenDino">
+                {{ dino }}
+            </label><br>
+        </template>
+        <span>Favorite: {{ chosenDino }}</span>
+        <hr>
+        <select v-model="selectedPeriods" multiple>
+            <option v-for="period in periods" v-bind:value="period.value">{{ period.name }}</option>
+        </select><br>
+        <span>Selected Periods Value: {{ selectedPeriods }}</span>
+        <hr>
+        <input type="text" v-model="single">
+        <p>{{ single }}</p>
+        <hr>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+        <p style="white-space: pre;">{{ message }}</p>
+    </div>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <div id="card">
+        <header>{{ title }}</header>
+        <button v-bind:class="[sizeToggle ? 'large' : '', {'rounded' : isRounded}]" v-bind:style="styles" v-bind:disabled="disabled">
+            Start Tour
+        </button>
+        <hr>
+        <h4>Options</h4>
+        <ul>
+            <li><input type="checkbox" v-model="sizeToggle"><label>Large</label></li>
+            <li><input type="checkbox" id="round" v-model="isRounded" for="rounded"><label>Round</label></li>
+            <li><input type="checkbox" v-model="disabled"><label>Disabled</label></li>
+            <li><input type="text" v-model="backgroundColor"><label>Background Color</label></li>
+            <li><input type="text" v-model="fontColor"><label>Font Color</label></li>
+            <li><input type="range" v-model="range" min="15" max="85"><label>Position</label></li>
+        </ul>
+    </div>
+</html>
