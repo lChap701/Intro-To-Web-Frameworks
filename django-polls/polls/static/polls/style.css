@@ -1,0 +1,16 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/background.gif") no-repeat;
+}
+
+form {
+    border: #000 solid 1px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    margin: 10px 0 0 5px ;
+}
